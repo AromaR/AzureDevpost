@@ -14,7 +14,17 @@ class App extends Component {
     api:"2a41caa52c40430b896936cc93c42527"
   }
   componentDidMount() {
-    fetch('https://newsapi.org/v2/everything?q=rape&apiKey=2a41caa52c40430b896936cc93c42527')
+    fetch('https://newsapi.org/v2/everything?q=rape&apiKey=2a41caa52c40430b896936cc93c42527',{
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'same-origin', // include, *same-origin, omit
+      headers: {
+        'Content-Type': 'application/json'
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      redirect: 'follow', // manual, *follow, error
+      referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    })
     .then(res => res.json())
     .then((data) => {
       this.setState({ rapes: data })
