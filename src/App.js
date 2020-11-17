@@ -14,19 +14,19 @@ class App extends Component {
     api:"2a41caa52c40430b896936cc93c42527"
   }
   componentDidMount() {
-    fetch('http://newsapi.org/v2/everything?q=rape&apiKey=2a41caa52c40430b896936cc93c42527')
+    fetch('https://newsapi.org/v2/everything?q=rape&apiKey=2a41caa52c40430b896936cc93c42527')
     .then(res => res.json())
     .then((data) => {
       this.setState({ rapes: data })
     })
     .catch(console.log)
-    fetch('http://newsapi.org/v2/everything?q=femicide&apiKey=2a41caa52c40430b896936cc93c42527')
+    fetch('https://newsapi.org/v2/everything?q=femicide&apiKey=2a41caa52c40430b896936cc93c42527')
     .then(res => res.json())
     .then((data) => {
       this.setState({ fems: data })
     })
     .catch(console.log)
-    fetch('http://newsapi.org/v2/everything?q=gender%20AND%20based%20AND%20violence&apiKey=2a41caa52c40430b896936cc93c42527')
+    fetch('https://newsapi.org/v2/everything?q=gender%20AND%20based%20AND%20violence&apiKey=2a41caa52c40430b896936cc93c42527')
     .then(res => res.json())
     .then((data) => {
       this.setState({ stats: data })
